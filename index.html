@@ -7,7 +7,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        .form-container,
+        .form-container div,
+        .results {
+            max-width: 400px;
+            width: 90%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .form-group {
             margin-bottom: 15px;
@@ -15,18 +37,24 @@
         label {
             display: block;
             margin-bottom: 5px;
+            font-weight: bold;
         }
         input {
-            padding: 8px;
+            padding: 10px;
             width: 100%;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         button {
             padding: 10px 15px;
             background-color: #007BFF;
             color: white;
             border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+            width: 100%;
         }
         button:hover {
             background-color: #0056b3;
@@ -34,11 +62,19 @@
         .results {
             margin-top: 20px;
         }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            div {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>班分けシステム</h1>
-    <div>
+    <div class="form-container">
         <div class="form-group">
             <label for="total-members">メンバーの人数:</label>
             <input type="number" id="total-members" placeholder="例: 47">
